@@ -59,6 +59,10 @@ rockchip_setup_interfaces()
 	cyber,cyber3588-aib)
 		ucidef_set_interfaces_lan_wan "eth0" "eth1"
 		;;
+	linkfog,ala2)
+		ucidef_add_switch "switch0" \
+			"0:wan" "1:lan" "2:lan" "3:lan" "4:lan"  "7t@eth0"
+		;;
 	radxa,e54c)
 		ucidef_add_switch "switch0" \
 			"3:wan" "2:lan" "1:lan" "0:lan" "6t@eth0"
@@ -116,6 +120,7 @@ rockchip_setup_macs()
 	jp,tvbox|\
 	panther,x2|\
 	dg,nas-lite|\
+	linkfog,ala2|\
 	lyt,t68m|\
 	mangopi,m28k|\
 	nlnet,xgp|\

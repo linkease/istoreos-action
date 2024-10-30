@@ -58,6 +58,7 @@ preinit_otg() {
 	jsy,h1|\
 	yyy,h1|\
 	idiskk,h1|\
+	linkfog,ala2|\
 	fastrhino,r66s|\
 	fastrhino,r68s)
 		# RK356x

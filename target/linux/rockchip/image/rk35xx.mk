@@ -334,6 +334,15 @@ $(call Device/rk3566)
 endef
 TARGET_DEVICES += le_hes30
 
+define Device/linkfog_ala2
+$(call Device/rk3568)
+  DEVICE_VENDOR := Linkfog
+  DEVICE_MODEL := ALA2
+  DEVICE_DTS := rk3568-ala2
+  DEVICE_PACKAGES := kmod-nvme kmod-scsi-core kmod-thermal kmod-switch-rtl8367b swconfig
+endef
+TARGET_DEVICES += linkfog_ala2
+
 define Device/mangopi_m28k
 $(call Device/rk3528_rtl8111h)
   DEVICE_VENDOR := MangoPi
