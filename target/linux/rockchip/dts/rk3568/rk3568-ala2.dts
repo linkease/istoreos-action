@@ -10,7 +10,6 @@
 #include <dt-bindings/pinctrl/rockchip.h>
 #include <dt-bindings/input/rk-input.h>
 #include "rk3568.dtsi"
-#include "../rockchip-drm-vvop.dtsi"
 
 / {
 	model = "Linkfog ALA2";
@@ -115,7 +114,7 @@
 		vin-supply = <&vcc3v3_sys>;
 	};
 
-    vcc3v3_pi6c_03: vcc3v3-pi6c-03 {
+	vcc3v3_pi6c_03: vcc3v3-pi6c-03 {
 		compatible = "regulator-fixed";
 		regulator-name = "vcc3v3_pi6c_03";
 		pinctrl-names = "default";
@@ -845,3 +844,5 @@
 		};
 	};
 };
+
+#include "../rockchip-drm-vvop.dtsi"
