@@ -3,7 +3,7 @@
 
 /dts-v1/;
 
-#include "rk3568-mrkaio-m68s.dtsi"
+#include "rk3568-mrkaio-m68s-core.dtsi"
 
 / {
 	model = "EZPRO Mrkaio M68S";
