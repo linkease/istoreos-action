@@ -296,6 +296,26 @@ $(call Device/rk3568)
 endef
 TARGET_DEVICES += dg_nas-lite
 
+define Device/ezpro_mrkaio-m68s
+$(call Device/rk3568)
+  DEVICE_VENDOR := EZPRO
+  DEVICE_MODEL := Mrkaio M68S
+  DEVICE_DTS := rk3568-mrkaio-m68s
+  SUPPORTED_DEVICES += ezpro,mrkaio-m68s
+  DEVICE_PACKAGES := kmod-scsi-core kmod-thermal
+endef
+TARGET_DEVICES += ezpro_mrkaio-m68s
+
+define Device/ezpro_mrkaio-m68s-plus
+$(call Device/rk3568)
+  DEVICE_VENDOR := EZPRO
+  DEVICE_MODEL := Mrkaio M68S PLUS
+  DEVICE_DTS := rk3568-mrkaio-m68s-plus
+  SUPPORTED_DEVICES += ezpro,mrkaio-m68s-plus
+  DEVICE_PACKAGES := kmod-r8125 kmod-nvme kmod-scsi-core kmod-hwmon-pwmfan kmod-thermal
+endef
+TARGET_DEVICES += ezpro_mrkaio-m68s-plus
+
 define Device/ynn_ynnnas
   $(call Device/rk3566)
   DEVICE_VENDOR := YingNiuNiu
