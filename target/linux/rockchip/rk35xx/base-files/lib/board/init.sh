@@ -220,7 +220,8 @@ board_fixup_iface_name() {
 board_set_iface_smp_affinity() {
 	case $(board_name) in
 	inspur,ihec301|\
-	firefly,rk3568-roc-pc)
+	firefly,rk3568-roc-pc|\
+	ezpro,mrkaio-m68s)
 		set_iface_cpumask 2 eth0
 		set_iface_cpumask 4 eth1
 		;;
@@ -266,7 +267,8 @@ board_set_iface_smp_affinity() {
 	friendlyelec,nanopi-r5c|\
 	fastrhino,r66s|\
 	hinlink,hnas|\
-	hinlink,opc-h66k)
+	hinlink,opc-h66k|\
+	ezpro,mrkaio-m68s-plus)
 		if ethtool -i eth0 | grep -Fq 'driver: r8169'; then
 			set_iface_cpumask 4 "eth0"
 			set_iface_cpumask 8 "eth1"
