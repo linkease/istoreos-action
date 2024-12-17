@@ -94,8 +94,7 @@ board_fixup_iface_name() {
 	local device
 	case $(board_name) in
 	friendlyelec,nanopi-r5c|\
-	fastrhino,r66s|\
-	ezpro,mrkaio-m68s-plus)
+	fastrhino,r66s)
 		device="$(get_iface_device eth0)"
 		if [[ "$device" = "0001:11:00.0" ]]; then
 			rename_iface eth0 lan1
