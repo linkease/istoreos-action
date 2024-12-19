@@ -275,7 +275,6 @@
 		regulator-name = "vdd_cpu";
 		regulator-ramp-delay = <2300>;
 		vin-supply = <&vcc5v0_sys>;
-
 		regulator-state-mem {
 			regulator-off-in-suspend;
 		};
@@ -388,7 +387,6 @@
 				regulator-ramp-delay = <6001>;
 				regulator-initial-mode = <0x2>;
 				regulator-name = "vdd_npu";
-
 				regulator-state-mem {
 					regulator-off-in-suspend;
 				};
@@ -400,7 +398,6 @@
 				regulator-min-microvolt = <1800000>;
 				regulator-max-microvolt = <1800000>;
 				regulator-name = "vcc_1v8";
-
 				regulator-state-mem {
 					regulator-off-in-suspend;
 				};
