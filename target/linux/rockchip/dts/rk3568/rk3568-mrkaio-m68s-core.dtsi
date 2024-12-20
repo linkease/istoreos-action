@@ -2,13 +2,11 @@
 
 #include <dt-bindings/gpio/gpio.h>
 #include <dt-bindings/pwm/pwm.h>
-#include <dt-bindings/input/rk-input.h>
 #include <dt-bindings/pinctrl/rockchip.h>
-#ifdef DTS_NO_LEGACY
-#include <dt-bindings/soc/rockchip,vop2.h>
-#else
+#include <dt-bindings/input/rk-input.h>
+#include <dt-bindings/display/drm_mipi_dsi.h>
 #include <dt-bindings/display/rockchip_vop.h>
-#endif
+#include <dt-bindings/sensor-dev.h>
 #include "rk3568.dtsi"
 
 / {
@@ -213,7 +211,6 @@
 	status = "okay";
 };
 
-#ifdef DTS_NO_LEGACY
 &vop {
 	assigned-clocks = <&cru DCLK_VOP0>, <&cru DCLK_VOP1>;
 	assigned-clock-parents = <&pmucru PLL_HPLL>, <&cru PLL_VPLL>;
@@ -225,6 +222,7 @@
 	status = "okay";
 };
 
+#ifdef DTS_NO_LEGACY
 &gpu {
 	mali-supply = <&vdd_gpu>;
 	status = "okay";
