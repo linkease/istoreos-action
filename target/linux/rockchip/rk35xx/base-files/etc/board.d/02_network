@@ -46,11 +46,11 @@ rockchip_setup_interfaces()
 	friendlyelec,nanopi-r6s)
 		ucidef_set_interfaces_lan_wan 'eth2 eth0' 'eth1'
 		;;
+	ezpro,mrkaio-m68s|\
+	ezpro,mrkaio-m68s-plus|\
 	radxa,e20c|\
 	mangopi,m28k|\
-	hlink,h28k|\
-	ezpro,mrkaio-m68s|\
-	ezpro,mrkaio-m68s-plus)
+	hlink,h28k)
 		ucidef_set_interfaces_lan_wan 'eth0' 'eth1'
 		;;
 	inspur,ihec301)
@@ -101,6 +101,8 @@ rockchip_setup_macs()
 	armsom,sige7-v1|\
 	easepi,ars4|\
 	easepi,r1|\
+	ezpro,mrkaio-m68s|\
+	ezpro,mrkaio-m68s-plus|\
 	firefly,rk3568-roc-pc|\
 	friendlyelec,nanopi-r3s|\
 	friendlyelec,nanopi-r5s|\
@@ -132,9 +134,7 @@ rockchip_setup_macs()
 	roceos,k40pro|\
 	roceos,k50s|\
 	fastrhino,r66s|\
-	fastrhino,r68s|\
-	ezpro,mrkaio-m68s|\
-	ezpro,mrkaio-m68s-plus)
+	fastrhino,r68s)
 		wan_mac=$(generate_mac_from_mmc)
 		lan_mac=$(macaddr_add "$wan_mac" 1)
 		;;
