@@ -83,8 +83,6 @@
 			linux,default-trigger = "heartbeat";
 			pinctrl-names = "default";
 			pinctrl-0 = <&led_status_enable_h>;
-			retain-state-suspended;
-			status = "okay";
 		};
 	};
 
@@ -150,22 +148,18 @@
 
 &cpu0 {
 	cpu-supply = <&vdd_cpu>;
-	mem-supply = <&vdd_cpu>;
 };
 
 &cpu1 {
 	cpu-supply = <&vdd_cpu>;
-	mem-supply = <&vdd_cpu>;
 };
 
 &cpu2 {
 	cpu-supply = <&vdd_cpu>;
-	mem-supply = <&vdd_cpu>;
 };
 
 &cpu3 {
 	cpu-supply = <&vdd_cpu>;
-	mem-supply = <&vdd_cpu>;
 };
 
 &dfi {
