@@ -67,30 +67,24 @@
 			gpios = <&gpio0 RK_PD4 GPIO_ACTIVE_HIGH>;
 			pinctrl-names = "default";
 			pinctrl-0 = <&led_pwr_enable_h>;
-			retain-state-suspended;
-			status = "okay";
 		};
-		
+
 		led_wifi: led-wifi {
 			label = "led-wifi";
 			default-state = "off";
 			gpios = <&gpio0 RK_PD6 GPIO_ACTIVE_HIGH>;
 			pinctrl-names = "default";
 			pinctrl-0 = <&led_wifi_enable_h>;
-			retain-state-suspended;
-			status = "okay";
 		};
-		
+
 		led_eth: led-eth {
 			label = "led-eth";
 			default-state = "off";
 			gpios = <&gpio0 RK_PD5 GPIO_ACTIVE_HIGH>;
 			pinctrl-names = "default";
 			pinctrl-0 = <&led_eth_enable_h>;
-			retain-state-suspended;
-			status = "okay";
 		};
-		
+
 		led_status: led-status {
 			label = "led-status";
 			default-state = "on";
@@ -98,8 +92,6 @@
 			linux,default-trigger = "heartbeat";
 			pinctrl-names = "default";
 			pinctrl-0 = <&led_status_enable_h>;
-			retain-state-suspended;
-			status = "okay";
 		};
 	};
 
@@ -157,22 +149,18 @@
 
 &cpu0 {
 	cpu-supply = <&vdd_cpu>;
-	mem-supply = <&vdd_cpu>;
 };
 
 &cpu1 {
 	cpu-supply = <&vdd_cpu>;
-	mem-supply = <&vdd_cpu>;
 };
 
 &cpu2 {
 	cpu-supply = <&vdd_cpu>;
-	mem-supply = <&vdd_cpu>;
 };
 
 &cpu3 {
 	cpu-supply = <&vdd_cpu>;
-	mem-supply = <&vdd_cpu>;
 };
 
 &dfi {
@@ -499,11 +487,11 @@
 		led_pwr_enable_h: led-pwr-enable-h {
 			rockchip,pins = <0 RK_PD4 RK_FUNC_GPIO &pcfg_pull_none>;
 		};
-		
+
 		led_wifi_enable_h: led-wifi-enable-h {
 			rockchip,pins = <0 RK_PD6 RK_FUNC_GPIO &pcfg_pull_none>;
 		};
-		
+
 		led_eth_enable_h: led-eth-enable-h {
 			rockchip,pins = <0 RK_PD5 RK_FUNC_GPIO &pcfg_pull_none>;
 		};
@@ -518,7 +506,6 @@
 			rockchip,pins = <0 RK_PA3 RK_FUNC_GPIO &pcfg_pull_up>;
 		};
 	};
-
 };
 
 &pmu_io_domains {
