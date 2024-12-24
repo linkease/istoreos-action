@@ -36,6 +36,7 @@ rockchip_setup_interfaces()
 	easepi,r1|\
 	roceos,k40pro|\
 	lyt,t68m|\
+	lyt,t88m|\
 	fastrhino,r68s|\
 	hinlink,opc-h68k)
 		ucidef_set_interfaces_lan_wan 'eth1 eth2 eth3' 'eth0'
@@ -126,6 +127,7 @@ rockchip_setup_macs()
 	dg,nas-lite|\
 	linkfog,ala2|\
 	lyt,t68m|\
+	lyt,t88m|\
 	mangopi,m28k|\
 	nlnet,xgp|\
 	radxa,e20c|\

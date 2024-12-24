@@ -212,6 +212,17 @@ $(call Device/rk3568)
 endef
 TARGET_DEVICES += lyt_t68m
 
+define Device/lyt_t88m
+$(call Device/rk3588)
+  DEVICE_MODEL := T88M
+  DEVICE_VENDOR := LYT
+  DEVICE_PACKAGES := kmod-r8125 kmod-nvme kmod-scsi-core
+  SUPPORTED_DEVICES += lyt,t88m
+  DEVICE_DTS := rk3588-t88m
+  UBOOT_DEVICE_NAME := lyt-rk3588
+endef
+TARGET_DEVICES += lyt_t88m
+
 define Device/hinlink_rk3588
 $(call Device/rk3588)
   DEVICE_VENDOR := HINLINK
