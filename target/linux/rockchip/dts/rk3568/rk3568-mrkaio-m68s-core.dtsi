@@ -188,11 +188,11 @@
 &rknpu {
 	rknpu-supply = <&vdd_npu>;
 	mem-supply = <&vdd_npu>;
-	status = "okay";
+	status = "disabled";
 };
 
 &rknpu_mmu {
-	status = "okay";
+	status = "disabled";
 };
 
 &vdpu {
