@@ -40,7 +40,6 @@
 			<0x0 0xfd907000 0x0 0x1000>;
 	};
 
-#ifdef DTS_NO_LEGACY
 	hdmi_sound: hdmi-sound {
 		compatible = "simple-audio-card";
 		simple-audio-card,format = "i2s";
@@ -55,7 +54,6 @@
 			sound-dai = <&hdmi>;
 		};
 	};
-#endif
 
 	dc_12v: dc-12v-regulator {
 		compatible = "regulator-fixed";
@@ -188,11 +186,11 @@
 &rknpu {
 	rknpu-supply = <&vdd_npu>;
 	mem-supply = <&vdd_npu>;
-	status = "okay";
+	status = "disabled";
 };
 
 &rknpu_mmu {
-	status = "okay";
+	status = "disabled";
 };
 
 &vdpu {
@@ -222,7 +220,6 @@
 	status = "okay";
 };
 
-#ifdef DTS_NO_LEGACY
 &gpu {
 	mali-supply = <&vdd_gpu>;
 	status = "okay";
@@ -256,7 +253,6 @@
 &i2s0_8ch {
 	status = "okay";
 };
-#endif
 
 &i2c0 {
 	status = "okay";
@@ -578,12 +574,14 @@
 	status = "okay";
 };
 
-#ifdef DTS_NO_LEGACY
+&rockchip_suspend {
+	status = "okay";
+};
+
 &route_hdmi {
 	status = "okay";
 	connect = <&vp0_out_hdmi>;
 };
-#endif
 
 &saradc {
 	vref-supply = <&vcca_1v8>;
