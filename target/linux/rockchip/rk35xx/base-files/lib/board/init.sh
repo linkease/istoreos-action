@@ -209,20 +209,6 @@ board_fixup_iface_name() {
 			rename_iface lan eth1
 		fi
 		;;
-	lyt,t88m)
-		device="$(get_iface_device eth1)"
-		if [[ "$device" = "fe1b0000.ethernet" ]]; then
-			rename_iface eth0 lan
-			rename_iface eth1 eth0
-			rename_iface lan eth1
-		fi
-		device="$(get_iface_device eth3)"
-		if [[ "$device" = "0004:41:00.0" ]]; then
-			rename_iface eth2 lan3
-			rename_iface eth3 eth2
-			rename_iface lan3 eth3
-		fi
-		;;
 	*)
 		if [[ -s /proc/device-tree/eth_order ]]; then
 			reorder_eth $(cat /proc/device-tree/eth_order | tr ',' ' ' )

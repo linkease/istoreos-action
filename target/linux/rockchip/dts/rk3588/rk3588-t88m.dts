@@ -22,6 +22,7 @@
 / {
 	model = "LYT T88M";
 	compatible = "lyt,t88m", "rockchip,rk3588";
+	eth_order = "fe1b0000.ethernet,fe1c0000.ethernet,0004:41:00.0,0002:21:00.0";
 
 	aliases {
 		led-boot = &work_led;
