@@ -125,6 +125,7 @@ rockchip_setup_macs()
 	jp,tvbox|\
 	panther,x2|\
 	dg,nas-lite|\
+	dg,tn3568|\
 	linkfog,ala2|\
 	lyt,t68m|\
 	lyt,t88m|\
