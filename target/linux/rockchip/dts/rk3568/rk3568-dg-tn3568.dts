@@ -19,7 +19,7 @@
 
 / {
 
-    model = "DG TN3568";
+	model = "DG TN3568";
 	compatible = "dg,tn3568", "rockchip,rk3568";
 
 	aliases {
@@ -227,14 +227,14 @@
 		interrupt-parent = <&gpio3>;
 		interrupts = <11 IRQ_TYPE_EDGE_FALLING>;
 		pulses-per-revolution = <2>;
-        cooling-levels = <0 50 100 150 200 255>;
-        rockchip,temp-trips = <
-                40000   1
-                50000   2
-                55000   3
-                60000   4
-                70000   5
-        >;
+		cooling-levels = <0 50 100 150 200 255>;
+		rockchip,temp-trips = <
+				40000   1
+				50000   2
+				55000   3
+				60000   4
+				70000   5
+		>;
 	};
 	
 };
@@ -294,8 +294,8 @@
 	status = "okay";
 
 	system-status-level = <
-		/*system status         freq level*/
-		SYS_STATUS_NORMAL      DMC_FREQ_LEVEL_MID_HIGH 
+		/*system status		 freq level*/
+		SYS_STATUS_NORMAL	  DMC_FREQ_LEVEL_MID_HIGH 
 	>;
 	
 	auto-freq-en = <0>;
@@ -637,9 +637,9 @@
 	rockchip,clk-trcm = <1>;
 	pinctrl-names = "default";
 	pinctrl-0 = <&i2s1m0_sclktx
-		     &i2s1m0_lrcktx
-		     &i2s1m0_sdi0
-		     &i2s1m0_sdo0>;
+			 &i2s1m0_lrcktx
+			 &i2s1m0_sdi0
+			 &i2s1m0_sdo0>;
 };
 
 
@@ -680,7 +680,7 @@
 };
 
 &sata1 {
-    status = "okay";
+	status = "okay";
 };
 
 /* PCIE */
@@ -747,10 +747,10 @@
 
 	pinctrl-names = "default";
 	pinctrl-0 = <&gmac0_miim
-		     &gmac0_tx_bus2
-		     &gmac0_rx_bus2
-		     &gmac0_rgmii_clk
-		     &gmac0_rgmii_bus>;
+			 &gmac0_tx_bus2
+			 &gmac0_rx_bus2
+			 &gmac0_rgmii_clk
+			 &gmac0_rgmii_bus>;
 
 	tx_delay = <0x2a>;
 	rx_delay = <0x2a>;
@@ -882,14 +882,14 @@
 /*USB 3.0 HOST 与 SATA1 复用 对应lede usb_host1_xhci */
 
 &usbhost_dwc3 { 
-    status = "okay"; 
+	status = "okay"; 
 };
 
 /* 对应lede combphy1 */
 &combphy1_usq { 
 //	rockchip,dis-u3otg1-port;
 	phy-supply = <&vcc5v0_host>;
-    status = "okay"; 
+	status = "okay"; 
 };
 
 
