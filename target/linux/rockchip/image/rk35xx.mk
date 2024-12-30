@@ -307,6 +307,16 @@ $(call Device/rk3568)
 endef
 TARGET_DEVICES += dg_nas-lite
 
+define Device/dg_tn3568
+$(call Device/rk3568)
+  DEVICE_VENDOR := DG
+  DEVICE_MODEL := TN3568
+  DEVICE_DTS := rk3568-dg-tn3568
+  SUPPORTED_DEVICES += dg,tn3568
+  DEVICE_PACKAGES := kmod-scsi-core kmod-hwmon-pwmfan kmod-thermal
+endef
+TARGET_DEVICES += dg_tn3568
+
 define Device/ezpro_mrkaio-m68s
 $(call Device/rk3568)
   DEVICE_VENDOR := EZPRO
