@@ -223,6 +223,17 @@ $(call Device/rk3588)
 endef
 TARGET_DEVICES += lyt_t88m
 
+define Device/yijiahe_jm10
+$(call Device/rk3588)
+  DEVICE_MODEL := YIJIAHE
+  DEVICE_VENDOR := JM10
+  DEVICE_PACKAGES := kmod-r8125 kmod-nvme kmod-scsi-core kmod-hwmon-pwmfan kmod-thermal
+  SUPPORTED_DEVICES += yijiahe,jm10
+  DEVICE_DTS := rk3588-yijiahe-jm10
+  UBOOT_DEVICE_NAME := yijiahe-jm10
+endef
+TARGET_DEVICES += yijiahe_jm10
+
 define Device/hinlink_rk3588
 $(call Device/rk3588)
   DEVICE_VENDOR := HINLINK
