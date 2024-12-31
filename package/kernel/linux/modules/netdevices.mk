@@ -343,7 +343,7 @@ define KernelPackage/phy-smsc
    SUBMENU:=$(NETWORK_DEVICES_MENU)
    TITLE:=SMSC PHY driver
    KCONFIG:=CONFIG_SMSC_PHY
-   DEPENDS:=+kmod-libphy
+   DEPENDS:=+kmod-libphy +(LINUX_6_6||LINUX_6_12):kmod-lib-crc16
    FILES:=$(LINUX_DIR)/drivers/net/phy/smsc.ko
    AUTOLOAD:=$(call AutoProbe,smsc)
 endef
@@ -354,6 +354,123 @@ endef
 
 $(eval $(call KernelPackage,phy-smsc))
 
+
+define KernelPackage/phy-vitesse
+   SUBMENU:=$(NETWORK_DEVICES_MENU)
+   TITLE:=Vitesse PHYs
+   KCONFIG:=CONFIG_VITESSE_PHY
+   DEPENDS:=+kmod-libphy
+   FILES:=$(LINUX_DIR)/drivers/net/phy/vitesse.ko
+   AUTOLOAD:=$(call AutoLoad,18,vitesse,1)
+endef
+
+define KernelPackage/phy-vitesse/description
+   Currently supports the vsc8244
+endef
+
+$(eval $(call KernelPackage,phy-vitesse))
+
+
+define KernelPackage/phy-airoha-en8811h
+  SUBMENU:=$(NETWORK_DEVICES_MENU)
+  TITLE:=Airoha EN8811H 2.5G Ethernet PHY
+  DEPENDS:=+en8811h-firmware +kmod-libphy
+  KCONFIG:=CONFIG_AIR_EN8811H_PHY
+  FILES:= \
+   $(LINUX_DIR)/drivers/net/phy/air_en8811h.ko
+  AUTOLOAD:=$(call AutoLoad,18,air_en8811h,1)
+endef
+
+define KernelPackage/phy-airoha-en8811h/description
+  Kernel modules for Airoha EN8811H 2.5G Ethernet PHY
+endef
+
+$(eval $(call KernelPackage,phy-airoha-en8811h))
+
+
+define KernelPackage/phy-aquantia
+  SUBMENU:=$(NETWORK_DEVICES_MENU)
+  TITLE:=Aquantia Ethernet PHYs
+  DEPENDS:=+kmod-libphy +kmod-hwmon-core +kmod-lib-crc-ccitt
+  KCONFIG:=CONFIG_AQUANTIA_PHY
+  FILES:=$(LINUX_DIR)/drivers/net/phy/aquantia.ko@lt6.1 \
+	$(LINUX_DIR)/drivers/net/phy/aquantia/aquantia.ko@ge6.1
+  AUTOLOAD:=$(call AutoLoad,18,aquantia,1)
+endef
+
+define KernelPackage/phy-aquantia/description
+  Kernel modules for Aquantia Ethernet PHYs
+endef
+
+$(eval $(call KernelPackage,phy-aquantia))
+
+define KernelPackage/dsa
+  SUBMENU:=$(NETWORK_DEVICES_MENU)
+  TITLE:=Distributed Switch Architecture support
+  DEPENDS:=+kmod-mdio-devres +kmod-phylink
+  KCONFIG:=CONFIG_NET_DSA
+  FILES:=$(LINUX_DIR)/net/dsa/dsa_core.ko
+endef
+
+define KernelPackage/dsa/description
+  Kernel module support for Distributed Switch Architecture
+endef
+
+$(eval $(call KernelPackage,dsa))
+
+define KernelPackage/dsa-tag-dsa
+  SUBMENU:=$(NETWORK_DEVICES_MENU)
+  TITLE:=Marvell DSA type DSA and EDSA taggers
+  DEPENDS:=+kmod-dsa
+  KCONFIG:= CONFIG_NET_DSA_TAG_DSA_COMMON \
+	CONFIG_NET_DSA_TAG_DSA \
+	CONFIG_NET_DSA_TAG_EDSA
+  FILES:=$(LINUX_DIR)/net/dsa/tag_dsa.ko
+  AUTOLOAD:=$(call AutoLoad,20,tag_dsa,1)
+endef
+
+define KernelPackage/dsa-tag-dsa/description
+  Kernel modules for Marvell DSA and EDSA tagging
+endef
+
+$(eval $(call KernelPackage,dsa-tag-dsa))
+
+define KernelPackage/dsa-mv88e6xxx
+  SUBMENU:=$(NETWORK_DEVICES_MENU)
+  TITLE:=Marvell MV88E6XXX DSA Switch
+  DEPENDS:=+kmod-dsa +kmod-ptp +kmod-phy-marvell +kmod-dsa-tag-dsa
+  KCONFIG:=CONFIG_NET_DSA_MV88E6XXX \
+	CONFIG_NET_DSA_MV88E6XXX_GLOBAL2=y \
+	CONFIG_NET_DSA_MV88E6XXX_PTP=y
+  FILES:=$(LINUX_DIR)/drivers/net/dsa/mv88e6xxx/mv88e6xxx.ko
+  AUTOLOAD:=$(call AutoLoad,21,mv88e6xxx,1)
+endef
+
+define KernelPackage/dsa-mv88e6xxx/description
+  Kernel modules for MV88E6XXX DSA switches
+endef
+
+$(eval $(call KernelPackage,dsa-mv88e6xxx))
+
+define KernelPackage/dsa-qca8k
+  SUBMENU:=$(NETWORK_DEVICES_MENU)
+  TITLE:=Qualcomm Atheros QCA8xxx switch family DSA support
+  DEPENDS:=+kmod-dsa +kmod-regmap-core
+  KCONFIG:= \
+	CONFIG_NET_DSA_QCA8K \
+	CONFIG_NET_DSA_QCA8K_LEDS_SUPPORT=y \
+	CONFIG_NET_DSA_TAG_QCA
+  FILES:= \
+	$(LINUX_DIR)/drivers/net/dsa/qca/qca8k.ko \
+	$(LINUX_DIR)/net/dsa/tag_qca.ko
+  AUTOLOAD:=$(call AutoLoad,22,qca8k,1)
+endef
+
+define KernelPackage/dsa-qca8k/description
+  DSA based kernel modules for the Qualcomm Atheros QCA8xxx switch family
+endef
+
+$(eval $(call KernelPackage,dsa-qca8k))
 
 define KernelPackage/swconfig
   SUBMENU:=$(NETWORK_DEVICES_MENU)
@@ -1332,7 +1449,6 @@ define KernelPackage/qede/description
 endef
 
 $(eval $(call KernelPackage,qede))
-
 
 define KernelPackage/qlcnic
   SUBMENU:=$(NETWORK_DEVICES_MENU)
