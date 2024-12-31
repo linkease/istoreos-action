@@ -864,6 +864,8 @@
 	status = "okay";
 };
 
+/*USB 3.0 HOST 与 SATA1 复用 对应lede usb_host1_xhci */
+
 &usbhost_dwc3 {
 	status = "okay";
 };
@@ -876,12 +878,6 @@
 &combphy0_us {
 	status = "okay";
 	phy-supply = <&vcc5v0_host>;
-};
-
-/*USB 3.0 HOST 与 SATA1 复用 对应lede usb_host1_xhci */
-
-&usbhost_dwc3 { 
-	status = "okay"; 
 };
 
 /* 对应lede combphy1 */
