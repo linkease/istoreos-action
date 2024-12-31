@@ -970,6 +970,7 @@
 
 &rknpu {
 	rknpu-supply = <&vdd_npu>;
+	mem-supply = <&vdd_npu>;
 	status = "okay";
 };
 
