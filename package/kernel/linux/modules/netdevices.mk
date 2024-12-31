@@ -354,6 +354,7 @@ endef
 
 $(eval $(call KernelPackage,phy-smsc))
 
+
 define KernelPackage/dsa
   SUBMENU:=$(NETWORK_DEVICES_MENU)
   TITLE:=Distributed Switch Architecture support
@@ -421,6 +422,7 @@ define KernelPackage/dsa-qca8k/description
 endef
 
 $(eval $(call KernelPackage,dsa-qca8k))
+
 
 define KernelPackage/swconfig
   SUBMENU:=$(NETWORK_DEVICES_MENU)
@@ -1399,6 +1401,7 @@ define KernelPackage/qede/description
 endef
 
 $(eval $(call KernelPackage,qede))
+
 
 define KernelPackage/qlcnic
   SUBMENU:=$(NETWORK_DEVICES_MENU)
