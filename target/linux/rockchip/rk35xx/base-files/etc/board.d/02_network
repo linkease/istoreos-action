@@ -44,11 +44,11 @@ rockchip_setup_interfaces()
 	roceos,k50s)
 		ucidef_set_interfaces_lan_wan 'eth1 eth2 eth3 eth4' 'eth0'
 		;;
-	yijiahe,jm10)
-		ucidef_set_interfaces_lan_wan 'eth0 eth1 eth3 eth4 eth5 eth6 eth7 eth8' 'eth2'
-		;;
 	friendlyelec,nanopi-r6s)
 		ucidef_set_interfaces_lan_wan 'eth2 eth0' 'eth1'
+		;;
+	yijiahe,jm10)
+		ucidef_set_interfaces_lan_wan 'eth0 eth1 eth3 eth4 eth5 eth6 eth7 eth8' 'eth2'
 		;;
 	ezpro,mrkaio-m68s|\
 	ezpro,mrkaio-m68s-plus|\
