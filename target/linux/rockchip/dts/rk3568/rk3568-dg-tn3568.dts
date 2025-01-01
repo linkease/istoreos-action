@@ -856,7 +856,7 @@
 /*USB3.0 controller 对应lede usb_host0_xhci */
 &usbdrd_dwc3 {
 	dr_mode = "host";
-	//extcon = <&usb2phy0>;
+	extcon = <&usb2phy0>;
 	status = "okay";
 };
 
