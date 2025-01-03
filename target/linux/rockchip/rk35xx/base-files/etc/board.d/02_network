@@ -132,6 +132,7 @@ rockchip_setup_macs()
 	linkfog,ala2|\
 	lyt,t68m|\
 	lyt,t88m|\
+	yijiahe,jm10|\
 	mangopi,m28k|\
 	nlnet,xgp|\
 	radxa,e20c|\
