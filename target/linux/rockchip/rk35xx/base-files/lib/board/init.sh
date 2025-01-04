@@ -193,6 +193,14 @@ board_fixup_iface_name() {
 			rename_iface wan eth0
 		fi
 		;;
+	yijiahe,jm10)
+		device="$(get_iface_device eth8)"
+		if [[ "$device" = "stmmac-0:1e" ]]; then
+			rename_iface eth1 wan
+			rename_iface eth0 eth1
+			rename_iface wan eth0
+		fi
+		;;
 	radxa,e52c)
 		device="$(get_iface_device eth0)"
 		if [[ "$device" = "0004:41:00.0" ]]; then
