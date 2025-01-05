@@ -314,7 +314,7 @@ $(call Device/rk3568)
   DEVICE_MODEL := NAS LITE
   DEVICE_DTS := rk3568-dg-nas-lite
   SUPPORTED_DEVICES += dg,nas-lite
-  DEVICE_PACKAGES := kmod-nvme kmod-scsi-core
+  DEVICE_PACKAGES := kmod-nvme kmod-scsi-core kmod-hwmon-pwmfan kmod-thermal
 endef
 TARGET_DEVICES += dg_nas-lite
 
