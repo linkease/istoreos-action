@@ -403,26 +403,6 @@ endef
 
 $(eval $(call KernelPackage,dsa-mv88e6xxx))
 
-define KernelPackage/dsa-qca8k
-  SUBMENU:=$(NETWORK_DEVICES_MENU)
-  TITLE:=Qualcomm Atheros QCA8xxx switch family DSA support
-  DEPENDS:=+kmod-dsa +kmod-regmap-core
-  KCONFIG:= \
-	CONFIG_NET_DSA_QCA8K \
-	CONFIG_NET_DSA_QCA8K_LEDS_SUPPORT=y \
-	CONFIG_NET_DSA_TAG_QCA
-  FILES:= \
-	$(LINUX_DIR)/drivers/net/dsa/qca/qca8k.ko \
-	$(LINUX_DIR)/net/dsa/tag_qca.ko
-  AUTOLOAD:=$(call AutoLoad,42,qca8k,1)
-endef
-
-define KernelPackage/dsa-qca8k/description
-  DSA based kernel modules for the Qualcomm Atheros QCA8xxx switch family
-endef
-
-$(eval $(call KernelPackage,dsa-qca8k))
-
 
 define KernelPackage/swconfig
   SUBMENU:=$(NETWORK_DEVICES_MENU)
