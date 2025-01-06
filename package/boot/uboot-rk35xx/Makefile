@@ -97,17 +97,8 @@ define U-Boot/lyt-rk3588
   UBOOT_CONFIG:=lyt-rk3588
 endef
 
-define U-Boot/yijiahe-jm10-rk3588
-  NAME:=RK3588 YIJIAHE JM10
-  DEPENDS:=+PACKAGE_u-boot-$(1):trusted-firmware-a-rk3588
-  ATF:=$(RK3588_ATF)
-  DDR:=$(RK3588_DDR)
-  SOC:=rk3588
-  UBOOT_CONFIG:=yijiahe-jm10-rk3588
-endef
-
 UBOOT_TARGETS := easepi-rk3568 easepi-rk3588 easepi-rk3528 xgp-rk3568 \
-	easepi-ddr1-rk3588 easepi-rk3308 lyt-rk3588 yijiahe-jm10-rk3588
+	easepi-ddr1-rk3588 easepi-rk3308 lyt-rk3588
 
 UBOOT_CONFIGURE_VARS += USE_PRIVATE_LIBGCC=yes
 
