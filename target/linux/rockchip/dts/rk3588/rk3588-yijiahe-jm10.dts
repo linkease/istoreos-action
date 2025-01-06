@@ -25,6 +25,8 @@
 	model = "YIJIAHE JM10";
 	compatible = "yijiahe,jm10", "rockchip,rk3588";
 
+	/delete-node/ chosen;
+
 	adc_keys: adc-keys {
 		compatible = "adc-keys";
 		io-channels = <&saradc 1>;
