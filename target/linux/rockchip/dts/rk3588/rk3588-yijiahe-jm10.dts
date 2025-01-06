@@ -19,6 +19,8 @@
 #include "rk3588-rk806-single.dtsi"
 #include "rk3588-linux.dtsi"
 
+#define kerneL_legacy_5_10 1
+
 / {
 	model = "YIJIAHE JM10";
 	compatible = "yijiahe,jm10", "rockchip,rk3588";
