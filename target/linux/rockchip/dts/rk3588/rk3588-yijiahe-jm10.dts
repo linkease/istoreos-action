@@ -54,7 +54,7 @@
 			press-threshold-microvolt = <1235000>;
 		};
 	};
-	
+
 	bt_sco: bt-sco {
 		status = "disabled";
 		compatible = "delta,dfbmcs320";
@@ -75,7 +75,7 @@
 			sound-dai = <&bt_sco 1>;
 		};
 	};
-	
+
 	hdmi0_sound: hdmi0-sound {
 		status = "disabled";
 		compatible = "rockchip,hdmi";
@@ -103,11 +103,11 @@
 			linux,default-trigger = "heartbeat";
 		};
 	};
-	
+
 	test-power {
 		status = "okay";
 	};
-	
+
 	vcc12v_dcin: vcc12v-dcin {
 		compatible = "regulator-fixed";
 		regulator-name = "vcc12v_dcin";
@@ -146,7 +146,7 @@
 		regulator-max-microvolt = <5000000>;
 		vin-supply = <&vcc5v0_usbdcin>;
 	};
-	
+
 	pcie20_avdd0v85: pcie20-avdd0v85 {
 		compatible = "regulator-fixed";
 		regulator-name = "pcie20_avdd0v85";
@@ -258,13 +258,13 @@
 		status = "okay";
 	};
 
-	
+
 	/* If hdmirx node is disabled, delete the reserved-memory node here. */
 	reserved-memory {
 		#address-cells = <2>;
 		#size-cells = <2>;
 		ranges;
-		
+	
 		/* Reserve 256MB memory for hdmirx-controller@fdee0000 */
 		cma {
 			compatible = "shared-dma-pool";
@@ -314,7 +314,7 @@
 			55000   4
 			60000   5
 		>;
-	};	
+	};
 
 };
 
@@ -379,18 +379,18 @@
 	snps,reset-active-low;
 	/* Reset time is 20ms, 100ms for rtl8211f */
 	snps,reset-delays-us = <0 20000 100000>;
-	
+
 	pinctrl-names = "default";
 	pinctrl-0 = <&gmac0_miim
 	&gmac0_tx_bus2
 	&gmac0_rx_bus2
 	&gmac0_rgmii_clk
 	&gmac0_rgmii_bus>;
-	
+
 	tx_delay = <0x45>;
 	//rx_delay = <0x4a>;
 	status = "okay";
-	
+
 	//phy-handle = <&rgmii_phy0>;
 
 	fixed-link {
@@ -415,7 +415,7 @@
 	switch0: switch@0 {
 		compatible = "marvell,mv88e6190";
 		#address-cells = <1>;
-		#size-cells = <0>;					
+		#size-cells = <0>;				
 		reg = <0x1e>;
 		dsa,member = <0 0>;
 		status = "okay";
@@ -486,7 +486,7 @@
 				label = "eth8";
 				phy-handle = <&switch0phy8>;
 			};
-		};		
+		};	
 
 		mdio {
 			#address-cells = <1>;
@@ -637,7 +637,7 @@
 	//clock-frequency = <400000>;// For others Display Port Screen
 	pinctrl-names = "default";
 	pinctrl-0 = <&i2c6m0_xfer>;
-	
+
 	hym8563: hym8563@51 {
 		compatible = "haoyu,hym8563";
 		reg = <0x51>;
@@ -746,7 +746,7 @@
 /* pcie3.0 x 4 slot */
 &pcie30phy {
 	status = "okay";
-	rockchip,pcie30-phymode = <PHY_MODE_PCIE_AGGREGATION>;	
+	rockchip,pcie30-phymode = <PHY_MODE_PCIE_AGGREGATION>;
 };
 
 &pinctrl {
@@ -756,7 +756,7 @@
 			rockchip,pins = <1 RK_PD5 RK_FUNC_GPIO &pcfg_pull_none>;
 		};
 	};
-	
+
 	hym8563 {
 		hym8563_int: hym8563-int {
 			rockchip,pins = <0 RK_PB0 RK_FUNC_GPIO &pcfg_pull_up>;
@@ -775,7 +775,7 @@
 			rockchip,pins = <0 RK_PB7 RK_FUNC_GPIO &pcfg_pull_up>;
 		};
 	};
-	
+
 	usb {
 		vcc5v0_host_en: vcc5v0-host-en {
 			rockchip,pins = <4 RK_PB0 RK_FUNC_GPIO &pcfg_pull_none>;
@@ -1048,7 +1048,7 @@
 			reg = <0>;
 			//remote-endpoint = <&usbc0_orien_sw>;
 		};
-		
+	
 		usbdp_phy0_dp_altmode_mux: endpoint@1 {
 			reg = <1>;
 			//remote-endpoint = <&dp_altmode_mux>;
